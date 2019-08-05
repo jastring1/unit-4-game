@@ -1,0 +1,45 @@
+body{
+    background-image: url("../images/background.png");
+}
+.game-title{
+    background: orange;
+    font-size: 36px;
+    padding: 5%;
+    margin: 5% 5% 5% 0%;
+    color: white;
+}
+.game-instructions{
+    background: beige;
+    color: teal;
+    font-size: 24px;
+    padding: 5%;
+    margin: 2% 2% 2% 0%;
+    line-height: 24px;
+}
+.target-score{
+    background: navy;
+    color: white;
+    font-size: 36px;
+    padding:5%;
+    margin: 2% 2% 2% 0%;
+    text-align: center;
+}
+.win-loss{
+    background: lime;
+    color: white;
+    font-size: 28px;
+    padding: 7%;
+    margin: 2% 2% 2% 0%;
+    text-align: center;
+}
+.running-score{
+    background: darkorchid;
+    color: white;
+    font-size: 36px;
+    padding: 2%;
+    text-align: center;
+}
+img{
+    border: solid 3px black;
+    padding: 2%
+}
