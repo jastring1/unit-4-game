@@ -26,7 +26,23 @@ function updateScoreboard() {
     runningText.textContent = gameTotal;
 
 }
-targetScore = Math.floor(Math.random() * 120 + 19);
+
+function checkResults(){
+    if (gameTotal === targetScore) {
+        wins++;
+        resetGame(); 
+    }
+    else if (gameTotal > targetScore) {
+        losses++;
+        resetGame();
+    }
+    else {
+        
+    }
+    updateScoreboard();
+
+}
+targetScore = Math.floor(Math.random() * 101 + 19);
 targetText.textContent = targetScore;
 winlossText.textContent = "Wins: " + wins +"   Losses: " + losses;
 gem1 = Math.floor(Math.random() * 12 + 1);
@@ -39,62 +55,20 @@ $(document).ready(function () {
 
     $("#gem1").on("click", function () {
         gameTotal += gem1;
-        if (gameTotal === targetScore) {
-            wins++;
-            resetGame(); 
-        }
-        else if (gameTotal > targetScore) {
-            losses++;
-            resetGame();
-        }
-        else {
-            
-        }
-        updateScoreboard();
+        checkResults();
+        
     });
     $("#gem2").on("click", function () {
         gameTotal += gem2;
-        if (gameTotal === targetScore) {
-            wins++;
-            resetGame();
-        }
-        else if (gameTotal > targetScore) {
-            losses++;
-            resetGame();
-        }
-        else {
-           
-        }
-        updateScoreboard();
+        checkResults();
     });
     $("#gem3").on("click", function () {
         gameTotal += gem3;
-        if (gameTotal === targetScore) {
-            wins++;
-            resetGame();
-        }
-        else if (gameTotal > targetScore) {
-            losses++;
-            resetGame();
-        }
-        else {
-            
-        }
-        updateScoreboard();
+        checkResults();
     });
     $("#gem4").on("click", function () {
         gameTotal += gem4;
-        if (gameTotal === targetScore) {
-            wins++;
-            resetGame();
-        }
-        else if (gameTotal > targetScore) {
-            losses++;
-            resetGame();  
-        }
-        else {
-        }
-        updateScoreboard();
+        checkResults();
     });
 });
 
