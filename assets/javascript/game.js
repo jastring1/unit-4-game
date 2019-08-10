@@ -7,10 +7,9 @@ var gemValues = [0, 0, 0, 0];
 var gameTotal = 0;
 var wins = 0;
 var losses = 0;
-//using javascript to capture certain text areas that will be updated dynamically through html
-var targetText = document.getElementById("target-text");
-var winlossText = document.getElementById("winloss-text");
-var runningText = document.getElementById("running-text");
+var target = $("#target-text");
+var winloss = $("#winloss-text");
+var running = $("#running-text");
 // This function resets values when a game has ended in a win or loss to continue to another game
 function resetGame() {
     targetScore = Math.floor(Math.random() * 102 + 19);
@@ -18,9 +17,9 @@ function resetGame() {
     gameTotal = 0;
 }//this function updates some html text content when a user clicks a gem or game ends
 function updateScoreboard() {
-    targetText.textContent = targetScore;
-    winlossText.textContent = "Wins: " + wins + "   Losses: " + losses;
-    runningText.textContent = gameTotal;
+    target.text(targetScore);
+    winloss.text("Wins: " + wins + "   Losses: " + losses);
+    running.text(gameTotal);
 }
 function checkResults() {//This function checks whether a win or loss has occured and updates the counters while also calling the update scoreboard function
     if (gameTotal === targetScore) {
@@ -34,8 +33,8 @@ function checkResults() {//This function checks whether a win or loss has occure
     updateScoreboard();
 }// These few lines of code initialize the game and generate random values for the crystals
 targetScore = Math.floor(Math.random() * 101 + 19);
-targetText.textContent = targetScore;
-winlossText.textContent = "Wins: " + wins + "   Losses: " + losses;
+target.text(targetScore);
+winloss.text("Wins: " + wins + "   Losses: " + losses);
 for (var i = 0; i < 4; i++) { gemValues[i] = Math.floor(Math.random() * 12 + 1); }
 gameTotal = 0;
 //main function that looks for clicks on the crystal images and updates values accordingly
